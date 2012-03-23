@@ -14,12 +14,13 @@ public class Collisions : MonoBehaviour {
 	}
 	
 	void OnControllerColliderHit (ControllerColliderHit hit) {
-		Rigidbody body = hit.collider.attachedRigidbody;
+		
 		if (hit.gameObject.name == "WreckablePlane") {
-			Debug.Log("WreckablePlane");
+			hit.gameObject.GetComponent<ShakeThemFall>().enabled = true;
+			//Debug.Log(script);
 			return;
 		}
-			
+		Rigidbody body = hit.collider.attachedRigidbody;	
 		if (body == null || body.isKinematic) {
 			//Debug.Log("No RigidBody");
 			return;
