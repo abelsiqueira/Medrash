@@ -25,7 +25,5 @@ public class Collisions : MonoBehaviour {
 			//Debug.Log("No RigidBody");
 			return;
 		}
-		
-		Debug.Log("CharColl");
 	}
 }
